@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alliance Tower Defense Value Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">ATD</div>
+    <div>
+      <h1>Alliance Tower Defense</h1>
+      <span>Value Calculator</span>
+    </div>
+  </div>
+  <div class="source">Official values • Discord</div>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Trade Value Calculator</h2>
+    <p>Select units for each side to compare their official values.</p>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="Search units..." autocomplete="off">
+      <select id="category">
+        <option value="All">All</option>
+        <option value="Units">Units</option>
+        <option value="Events">Events</option>
+        <option value="Mythics">Mythics</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="trade">
+    <div class="offer" id="yourOffer">
+      <div class="offer-head"><h3>Your Offer</h3><button class="clear" data-side="your">Clear</button></div>
+      <div class="selected" id="yourSelected"><div class="empty">Click a unit below to add it.</div></div>
+      <div class="total">Total Value <strong id="yourTotal">0</strong></div>
+    </div>
+    <div class="vs">VS</div>
+    <div class="offer" id="theirOffer">
+      <div class="offer-head"><h3>Their Offer</h3><button class="clear" data-side="their">Clear</button></div>
+      <div class="selected" id="theirSelected"><div class="empty">Click a unit below to add it.</div></div>
+      <div class="total">Total Value <strong id="theirTotal">0</strong></div>
+    </div>
+  </section>
+
+  <section class="result" id="result">
+    <div class="result-label">Trade Result</div>
+    <div class="result-main" id="resultMain">Add units to both sides</div>
+    <div class="difference" id="difference">Choose a unit to begin.</div>
+  </section>
+
+  <section class="picker">
+    <div class="picker-head">
+      <h2>Units</h2>
+      <span id="count"></span>
+    </div>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Values shown are based on the official value list you provided. Update the data file when the Discord values change.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
