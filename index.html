@@ -1,72 +1,96 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alliance Tower Defense Value Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alliance Tower Defense Value Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">
-    <div class="logo">ATD</div>
-    <div>
-      <h1>Alliance Tower Defense</h1>
-      <span>Value Calculator</span>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⚔️</div>
+      <div class="brand-text">
+        <h1>ATD Calculator</h1>
+        <span>Trade Value Comparator</span>
+      </div>
     </div>
-  </div>
-  <div class="source">Official values • Discord</div>
-</header>
+    <a href="#" class="source-link" title="Based on official Discord values">📊 Values</a>
+  </header>
 
-<main>
-  <section class="hero">
-    <h2>Trade Value Calculator</h2>
-    <p>Select units for each side to compare their official values.</p>
-    <div class="search-wrap">
-      <input id="search" type="search" placeholder="Search units..." autocomplete="off">
-      <select id="category">
-        <option value="All">All</option>
-        <option value="Units">Units</option>
-        <option value="Events">Events</option>
-        <option value="Mythics">Mythics</option>
-      </select>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <h2>Trade Value Calculator</h2>
+      <p>Compare unit values instantly. Left click to add to your offer, right click for their offer.</p>
+    </section>
 
-  <section class="trade">
-    <div class="offer" id="yourOffer">
-      <div class="offer-head"><h3>Your Offer</h3><button class="clear" data-side="your">Clear</button></div>
-      <div class="selected" id="yourSelected"><div class="empty">Click a unit below to add it.</div></div>
-      <div class="total">Total Value <strong id="yourTotal">0</strong></div>
-    </div>
-    <div class="vs">VS</div>
-    <div class="offer" id="theirOffer">
-      <div class="offer-head"><h3>Their Offer</h3><button class="clear" data-side="their">Clear</button></div>
-      <div class="selected" id="theirSelected"><div class="empty">Click a unit below to add it.</div></div>
-      <div class="total">Total Value <strong id="theirTotal">0</strong></div>
-    </div>
-  </section>
+    <section class="controls">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search units..." autocomplete="off">
+        <select id="category">
+          <option value="All">All Categories</option>
+          <option value="Units">Units</option>
+          <option value="Events">Events</option>
+          <option value="Mythics">Mythics</option>
+        </select>
+      </div>
+    </section>
 
-  <section class="result" id="result">
-    <div class="result-label">Trade Result</div>
-    <div class="result-main" id="resultMain">Add units to both sides</div>
-    <div class="difference" id="difference">Choose a unit to begin.</div>
-  </section>
+    <section class="trade">
+      <div class="offer-panel" id="yourOffer">
+        <div class="offer-header">
+          <h3>Your Offer</h3>
+          <button class="btn-clear" data-side="your" title="Clear all">✕</button>
+        </div>
+        <div class="selected-items" id="yourSelected">
+          <div class="empty-state">Add units to begin</div>
+        </div>
+        <div class="offer-total">
+          <span>Total Value</span>
+          <strong id="yourTotal">0</strong>
+        </div>
+      </div>
 
-  <section class="picker">
-    <div class="picker-head">
-      <h2>Units</h2>
-      <span id="count"></span>
-    </div>
-    <div id="grid" class="grid"></div>
-  </section>
-</main>
+      <div class="vs-divider">
+        <span>VS</span>
+      </div>
 
-<footer>
-  <p>Values shown are based on the official value list you provided. Update the data file when the Discord values change.</p>
-</footer>
+      <div class="offer-panel" id="theirOffer">
+        <div class="offer-header">
+          <h3>Their Offer</h3>
+          <button class="btn-clear" data-side="their" title="Clear all">✕</button>
+        </div>
+        <div class="selected-items" id="theirSelected">
+          <div class="empty-state">Add units to begin</div>
+        </div>
+        <div class="offer-total">
+          <span>Total Value</span>
+          <strong id="theirTotal">0</strong>
+        </div>
+      </div>
+    </section>
 
-<script src="data.js"></script>
-<script src="script.js"></script>
+    <section class="result-section" id="result">
+      <div class="result-content">
+        <div class="result-status" id="resultMain">Add units to compare</div>
+        <div class="result-detail" id="difference">Start by selecting units from below</div>
+      </div>
+    </section>
+
+    <section class="units-section">
+      <div class="section-header">
+        <h2>Units Library</h2>
+        <span class="unit-count" id="count">0 units</span>
+      </div>
+      <div id="grid" class="units-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Values are based on the official Discord list. Update regularly when values change.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
