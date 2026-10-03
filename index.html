@@ -4,146 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ATD Values - Alliance Tower Defense Value Calculator</title>
-
-    <meta name="description" content="Alliance Tower Defense official value calculator. Compare unit values, demand and trades.">
+    <title>ATD Values | Alliance Tower Defense</title>
+    <meta name="description" content="Alliance Tower Defense trading values and calculator.">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
     <header class="navbar">
-
-        <div class="nav-container">
+        <div class="nav-inner">
 
             <a href="#" class="logo">
-                <div class="logo-icon">ATD</div>
-
-                <div class="logo-text">
-                    <strong>ATD VALUES</strong>
-                    <span>Alliance Tower Defense</span>
-                </div>
+                <span class="logo-icon">⚔</span>
+                <span>
+                    <strong>ATD</strong>
+                    <small>VALUES</small>
+                </span>
             </a>
 
             <nav>
+                <a href="#home">Home</a>
                 <a href="#calculator">Calculator</a>
                 <a href="#values">Values</a>
                 <a href="#about">About</a>
             </nav>
 
-        </div>
+            <a href="#calculator" class="nav-button">Trade Calculator</a>
 
+        </div>
     </header>
 
 
     <!-- HERO -->
-    <section class="hero">
+    <main>
 
-        <div class="hero-content">
+        <section id="home" class="hero">
 
-            <div class="badge">
-                ● OFFICIAL VALUES
-            </div>
+            <div class="hero-content">
 
-            <h1>
-                Alliance Tower Defense
-                <span>Value Calculator</span>
-            </h1>
+                <div class="official-badge">
+                    ✓ OFFICIAL ATD VALUES
+                </div>
 
-            <p>
-                Compare trades using the latest values from the official
-                Alliance Tower Defense value list.
-            </p>
+                <h1>
+                    Alliance Tower Defense
+                    <span>Values</span>
+                </h1>
 
-            <a href="#calculator" class="hero-button">
-                Start Calculating →
-            </a>
+                <p>
+                    Check unit values, demand and trading information
+                    for Alliance Tower Defense.
+                </p>
 
-        </div>
+                <div class="hero-buttons">
+                    <a href="#calculator" class="primary-button">
+                        ⚔ Start Trading
+                    </a>
 
-    </section>
-
-
-    <!-- CALCULATOR -->
-    <main id="calculator">
-
-        <section class="calculator-section">
-
-            <div class="section-heading">
-
-                <div>
-                    <span class="eyebrow">TRADE CALCULATOR</span>
-
-                    <h2>
-                        Compare your trade
-                    </h2>
-
-                    <p>
-                        Add units to both sides to see the value difference.
-                    </p>
+                    <a href="#values" class="secondary-button">
+                        View Values
+                    </a>
                 </div>
 
             </div>
 
+            <div class="hero-card">
 
-            <!-- TRADE BOXES -->
-            <div class="trade-container">
+                <div class="hero-card-top">
+                    <span>MARKET OVERVIEW</span>
+                    <span class="live-dot">● LIVE</span>
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong id="unitCount">23</strong>
+                        <span>Units Listed</span>
+                    </div>
+
+                    <div>
+                        <strong id="highestValue">120K</strong>
+                        <span>Highest Value</span>
+                    </div>
+
+                </div>
+
+                <div class="hero-message">
+                    <span>📈</span>
+                    Values are updated using the current ATD value list.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CALCULATOR -->
+        <section id="calculator" class="section calculator-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">TRADING TOOL</span>
+                    <h2>Trade Calculator</h2>
+                    <p>Compare the value of both sides of a trade.</p>
+                </div>
+            </div>
+
+
+            <div class="trade-layout">
 
                 <!-- YOUR OFFER -->
                 <div class="trade-box your-box">
 
                     <div class="trade-header">
-
                         <div>
                             <span class="trade-label">YOUR OFFER</span>
                             <h3>Your Units</h3>
                         </div>
 
-                        <button
-                            class="clear-button"
-                            data-side="your">
+                        <button id="clearYour" class="clear-button">
                             Clear
                         </button>
-
                     </div>
 
-                    <div
-                        id="yourSelected"
-                        class="selected-units">
-
-                        <div class="empty-state">
-                            <div class="empty-icon">+</div>
-
-                            <strong>No units added</strong>
-
-                            <span>
-                                Select units below
-                            </span>
+                    <div id="yourOffer" class="offer-list">
+                        <div class="empty-offer">
+                            <span>+</span>
+                            <p>Add units from below</p>
                         </div>
-
                     </div>
 
-                    <div class="total-box">
-
+                    <div class="total">
                         <span>Total Value</span>
-
-                        <strong id="yourTotal">
-                            0
-                        </strong>
-
+                        <strong id="yourTotal">0</strong>
                     </div>
 
                 </div>
 
 
-                <!-- VS -->
-                <div class="vs-container">
+                <!-- RESULT -->
+                <div class="trade-result">
 
-                    <div class="vs-circle">
-                        VS
+                    <div class="vs-circle">VS</div>
+
+                    <div id="resultBadge" class="result-badge fair">
+                        FAIR
                     </div>
+
+                    <strong id="difference">0%</strong>
+
+                    <span id="resultText">
+                        Add units to compare
+                    </span>
 
                 </div>
 
@@ -152,44 +166,26 @@
                 <div class="trade-box their-box">
 
                     <div class="trade-header">
-
                         <div>
                             <span class="trade-label">THEIR OFFER</span>
                             <h3>Their Units</h3>
                         </div>
 
-                        <button
-                            class="clear-button"
-                            data-side="their">
+                        <button id="clearTheir" class="clear-button">
                             Clear
                         </button>
-
                     </div>
 
-                    <div
-                        id="theirSelected"
-                        class="selected-units">
-
-                        <div class="empty-state">
-                            <div class="empty-icon">+</div>
-
-                            <strong>No units added</strong>
-
-                            <span>
-                                Select units below
-                            </span>
+                    <div id="theirOffer" class="offer-list">
+                        <div class="empty-offer">
+                            <span>+</span>
+                            <p>Add units from below</p>
                         </div>
-
                     </div>
 
-                    <div class="total-box">
-
+                    <div class="total">
                         <span>Total Value</span>
-
-                        <strong id="theirTotal">
-                            0
-                        </strong>
-
+                        <strong id="theirTotal">0</strong>
                     </div>
 
                 </div>
@@ -197,101 +193,46 @@
             </div>
 
 
-            <!-- RESULT -->
-            <div
-                id="result"
-                class="result-box">
-
-                <span class="result-small">
-                    TRADE RESULT
-                </span>
-
-                <strong id="resultMain">
-                    Add units to both sides
-                </strong>
-
-                <span id="difference">
-                    Select units below to begin.
-                </span>
-
-            </div>
-
-
-            <!-- SEARCH -->
-            <div class="unit-selector">
+            <!-- UNIT SELECTOR -->
+            <div id="values" class="unit-selector">
 
                 <div class="selector-header">
 
                     <div>
-                        <span class="eyebrow">
-                            UNIT DATABASE
-                        </span>
-
-                        <h2>
-                            Select Units
-                        </h2>
+                        <span class="section-label">UNIT DATABASE</span>
+                        <h2>Choose a Unit</h2>
                     </div>
 
-                    <span id="count" class="unit-count"></span>
+                    <div class="instructions">
+                        <span>🖱️ Left click = Your Offer</span>
+                        <span>🖱️ Right click = Their Offer</span>
+                    </div>
 
                 </div>
 
 
-                <div class="search-area">
+                <div class="filters">
 
                     <div class="search-box">
-
                         <span>⌕</span>
-
                         <input
-                            id="search"
-                            type="search"
-                            placeholder="Search for a unit..."
-                            autocomplete="off">
-
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search units..."
+                        >
                     </div>
 
-                    <select id="category">
-
-                        <option value="All">
-                            All Units
-                        </option>
-
-                        <option value="Units">
-                            Units
-                        </option>
-
-                        <option value="Events">
-                            Events
-                        </option>
-
-                        <option value="Mythics">
-                            Mythics
-                        </option>
-
+                    <select id="categoryFilter">
+                        <option value="All">All Units</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Events">Events</option>
+                        <option value="Mythics">Mythics</option>
                     </select>
 
                 </div>
 
 
-                <div
-                    id="grid"
-                    class="unit-grid">
-                </div>
-
-                <div class="instructions">
-
-                    <div>
-                        🖱️ <strong>Left click</strong>
-                        → Your offer
-                    </div>
-
-                    <div>
-                        🖱️ <strong>Right click</strong>
-                        → Their offer
-                    </div>
-
-                </div>
+                <div id="unitGrid" class="unit-grid"></div>
 
             </div>
 
@@ -299,22 +240,45 @@
 
 
         <!-- ABOUT -->
-        <section id="about" class="about-section">
+        <section id="about" class="section about-section">
 
-            <span class="eyebrow">
-                ABOUT ATD VALUES
-            </span>
+            <div class="about-card">
 
-            <h2>
-                Built for Alliance Tower Defense traders.
-            </h2>
+                <span class="section-label">ABOUT ATD VALUES</span>
 
-            <p>
-                ATD Values is a community value calculator designed to
-                make comparing Alliance Tower Defense trades quick and easy.
-                Values are based on the official value information provided
-                through the game's Discord.
-            </p>
+                <h2>Built for Alliance Tower Defense traders.</h2>
+
+                <p>
+                    ATD Values is a simple trading calculator designed to
+                    help players compare units and understand their current
+                    trading values.
+                </p>
+
+                <div class="about-points">
+
+                    <div>
+                        <span>✓</span>
+                        <p>Current unit values</p>
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        <p>Demand information</p>
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        <p>Trade calculator</p>
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        <p>Unit status tracking</p>
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -324,19 +288,19 @@
     <!-- FOOTER -->
     <footer>
 
-        <div class="footer-content">
+        <div class="footer-inner">
 
-            <div>
-                <strong>ATD VALUES</strong>
-
-                <p>
-                    Alliance Tower Defense Value Calculator
-                </p>
+            <div class="footer-logo">
+                ⚔ <strong>ATD VALUES</strong>
             </div>
 
-            <div class="footer-right">
-                Official value information • Community calculator
-            </div>
+            <p>
+                Alliance Tower Defense trading values.
+            </p>
+
+            <span>
+                © 2026 ATD Values
+            </span>
 
         </div>
 
@@ -348,5 +312,3 @@
 
 </body>
 </html>
-
-
