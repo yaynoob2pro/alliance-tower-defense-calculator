@@ -273,29 +273,31 @@ function calculateResult(yourTotal, theirTotal) {
         `${rounded}%`;
 
 
-    if (Math.abs(difference) <= 10) {
+   if (Math.abs(difference) <= 10) {
 
-        resultBadge.className = "result-badge fair";
-        resultBadge.textContent = "FAIR";
-        resultText.textContent = "The values are close";
+    resultBadge.className = "result-badge fair";
+    resultBadge.textContent = "FAIR";
+    resultText.textContent = "The values are close";
 
-    }
+}
 
-    else if (difference > 10) {
+else if (difference > 10) {
 
-        resultBadge.className = "result-badge win";
-        resultBadge.textContent = "WIN";
-        resultText.textContent = "Your offer has higher value";
+    // YOUR offer is worth more = LOSS
+    resultBadge.className = "result-badge loss";
+    resultBadge.textContent = "LOSS";
+    resultText.textContent = "Your offer has higher value";
 
-    }
+}
 
-    else {
+else {
 
-        resultBadge.className = "result-badge loss";
-        resultBadge.textContent = "LOSS";
-        resultText.textContent = "Their offer has higher value";
+    // THEIR offer is worth more = WIN
+    resultBadge.className = "result-badge win";
+    resultBadge.textContent = "WIN";
+    resultText.textContent = "Their offer has higher value";
 
-    }
+}
 
 }
 
