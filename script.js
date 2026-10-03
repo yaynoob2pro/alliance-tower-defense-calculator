@@ -106,28 +106,36 @@ function renderUnits() {
         `;
 
 
-        /* LEFT CLICK = YOUR OFFER */
+        /* DESKTOP + MOBILE UNIT SELECTION */
 
-        card.addEventListener("click", () => {
+card.addEventListener("click", () => {
 
-            yourOffer.push(unit);
+    // On mobile, show the offer chooser
+    if (window.innerWidth <= 600) {
+        showMobileChoice(unit);
+        return;
+    }
 
-            updateCalculator();
+    // Desktop: left click = Your Offer
+    yourOffer.push(unit);
+    updateCalculator();
 
-        });
+});
 
 
-        /* RIGHT CLICK = THEIR OFFER */
+/* DESKTOP: RIGHT CLICK = THEIR OFFER */
 
-        card.addEventListener("contextmenu", event => {
+card.addEventListener("contextmenu", event => {
 
-            event.preventDefault();
+    event.preventDefault();
 
-            theirOffer.push(unit);
+    // Desktop only
+    if (window.innerWidth > 600) {
+        theirOffer.push(unit);
+        updateCalculator();
+    }
 
-            updateCalculator();
-
-        });
+});
 
 
         unitGrid.appendChild(card);
