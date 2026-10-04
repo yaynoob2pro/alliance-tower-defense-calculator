@@ -38,33 +38,30 @@ const UNITS = [
         category: "Mythics",
         icon: "https://cdn.discordapp.com/emojis/1550562416834781224.webp?size=128"
     },
-
-    {
-        name: "Glitch Cameraman",
-        value: 1,
-        demand: 1,
-        status: "N/A",
-        category: "Mythics",
-        icon: "https://cdn.discordapp.com/emojis/1533745443866021898.webp?size=128"
-    },
-
-    {
-        name: "Camera Woman 2.0",
-        value: 1,
-        demand: 1,
-        status: "N/A",
-        category: "Mythics",
-        icon: "https://cdn.discordapp.com/emojis/1540032231672905730.webp?size=128"
-    },
-
-    {
-        name: "Speaker Woman 2.0",
-        value: 1,
-        demand: 1,
-        status: "N/A",
-        category: "Mythics",
-        icon: "https://cdn.discordapp.com/emojis/1537790243724468224.webp?size=128"
-    },
+{
+    name: "Camera Woman 2.0",
+    value: 1,
+    demand: 1,
+    status: "N/A",
+    category: "Mythics",
+    icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=ec760f19b40444ab5b40291dfd1ff409c09651f824c3b76cc93c13f28fef65b9&=&format=webp&quality=lossless&width=693&height=693"
+},
+{
+    name: "Speaker Woman 2.0",
+    value: 1,
+    demand: 1,
+    status: "N/A",
+    category: "Mythics",
+    icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959262642045079/IMG_4339.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=ebc89daba3d70e0080aa2067ed0737959574c96ddf16dcfd9d8141b0c01fd7d5"
+},
+{
+    name: "Glitch Plunger",
+    value: 1,
+    demand: 1,
+    status: "N/A",
+    category: "Mythics",
+    icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959263480909936/IMG_4340.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=d3163dde0a6f1d5b80c3803fc4ca7cf5ec653c445306f726772134c6def06302&"
+},
 
 
     /* =========================
