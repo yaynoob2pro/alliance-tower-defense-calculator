@@ -4,15 +4,14 @@ const UNITS = [
        MYTHIC
     ========================= */
 
-    {
-        name: "Upgraded Titan Speakerman",
-        value: 3,
-        demand: 2,
-        status: "Obsolete",
-        category: "Mythics",
-        icon: "https://cdn.discordapp.com/emojis/1540031687935926344.webp?size=128"
-    },
-
+  {
+    name: "Upgraded Titan TV Man",
+    value: 1,
+    demand: 1,
+    status: "N/A",
+    category: "Omega",
+    icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=8b630be0f22874ac7d5c58eb33e548ff92f5679a2a646a13f9e2acb53a8a6f0d&"
+},
     {
         name: "Titan Cinemaman",
         value: 3,
