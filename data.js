@@ -5,11 +5,11 @@ const UNITS = [
     ========================= */
 
   {
-    name: "Upgraded Titan TV Man",
-    value: 1,
-    demand: 1,
-    status: "N/A",
-    category: "Omega",
+    name: "Upgraded Titan Speakerman",
+    value: 3,
+    demand: 2,
+    status: "Obsolete",
+    category: "Mythic",
     icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=8b630be0f22874ac7d5c58eb33e548ff92f5679a2a646a13f9e2acb53a8a6f0d&"
 },
     {
@@ -18,7 +18,7 @@ const UNITS = [
         demand: 3,
         status: "Obsolete",
         category: "Mythics",
-        icon: "https://cdn.discordapp.com/emojis/1545494568517111889.webp?size=128"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/3/36/Titan_Cinema_Man.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -70,11 +70,11 @@ const UNITS = [
 
     {
         name: "Upgraded Titan TV Man",
-        value: 1,
-        demand: 1,
+        value: 1000,
+        demand: 10,
         status: "N/A",
         category: "Omega",
-        icon: "https://cdn.discordapp.com/emojis/1540032231672905730.webp?size=128"
+        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=8b630be0f22874ac7d5c58eb33e548ff92f5679a2a646a13f9e2acb53a8a6f0d&"
     },
 
 
