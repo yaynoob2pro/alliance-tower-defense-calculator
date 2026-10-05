@@ -10,7 +10,7 @@ const UNITS = [
         demand: 2,
         status: "Obsolete",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/3/37/Titan_Speaker_Man_2%270.webp/revision/latest?cb=20260821064002"
+        icon: "https://media.discordapp.net/attachments/1549863063455531111/1550627256529854545/IMG-5566.png?ex=6ac4c66b&is=6ac374eb&hm=061b56cfe06ada9626ea98e4c276cf184f4d1fd647a4b3438345f51177510a56&=&format=webp&quality=lossless&width=640&height=640"
     },
 
     {
@@ -47,7 +47,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959263480909936/IMG_4340.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=d3163dde0a6f1d5b80c3803fc4ca7cf5ec653c445306f726772134c6def06302&"
+        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959263480909936/IMG_4340.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=61820ec28ee3dc5acd1e149ed6ed24c7b15fa7c68772269007200117a521a58f&=&format=webp&quality=lossless&width=693&height=693"
     },
 
     {
@@ -56,7 +56,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=ec760f19b40444ab5b40291dfd1ff409c09651f824c3b76cc93c13f28fef65b9&=&format=webp&quality=lossless&width=693&height=693"
+        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=fe9b81e0acb4152f8960ce90ad8b37375d263eb9feef64b3cf3857f6ce51b18f&=&format=webp&quality=lossless&width=693&height=693"
     },
 
     {
@@ -65,7 +65,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959262642045079/IMG_4339.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=ebc89daba3d70e0080aa2067ed0737959574c96ddf16dcfd9d8141b0c01fd7d5"
+        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959262642045079/IMG_4339.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=d3f931889906aef7490c5170c515498012ddb267ef25183c451063632f92c3bb&=&format=webp&quality=lossless&width=693&height=693"
     },
 
 
@@ -75,11 +75,11 @@ const UNITS = [
 
     {
         name: "Upgraded Titan TV Man",
-        value: 1,
-        demand: 1,
+        value: 1000,
+        demand: 10,
         status: "N/A",
         category: "Omega",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=8b630be0f22874ac7d5c58eb33e548ff92f5679a2a646a13f9e2acb53a8a6f0d&"
+        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=987b432777e8bc72746a9458a99a5e5b65427645d2f601ed0884dad228669c5d&"
     },
 
 
