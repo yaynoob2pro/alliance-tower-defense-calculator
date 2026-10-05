@@ -10,7 +10,7 @@ const UNITS = [
         demand: 2,
         status: "Obsolete",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9d/Upgraded_Titan_Speaker_Man.png/revision/latest?cb=20260927142217"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9d/Upgraded_Titan_Speaker_Man.png"
     },
 
     {
@@ -38,7 +38,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/7/7b/10M_Titan_Speakerman.png/revision/latest?cb=20260927142217"
+        icon: "https://discord.com/placeholder"
     },
 
     {
@@ -47,7 +47,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/8/8e/Glitch_Cameraman.png/revision/latest?cb=20260927142217"
+        icon: "https://discord.com/placeholder"
     },
 
     {
@@ -56,7 +56,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/2/2b/Camera_Woman_2.0.png/revision/latest?cb=20260927142217"
+        icon: "https://discord.com/placeholder"
     },
 
     {
@@ -65,7 +65,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/6/6b/Speaker_Woman_2.0.png/revision/latest?cb=20260927142217"
+        icon: "https://discord.com/placeholder"
     },
 
 
