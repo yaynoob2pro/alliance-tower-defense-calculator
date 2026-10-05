@@ -29,7 +29,7 @@ const UNITS = [
         demand: 5,
         status: "Dropping",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/fd/Upgraded_Titan_Camera_Man.png/revision/latest?cb=20260927142217"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/f8/Upgraded_Titan_Camera_Man.png"
     },
 
     {
@@ -93,7 +93,7 @@ const UNITS = [
         demand: 8,
         status: "Unstable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/1/17/Engineer_Camera_Man.png/revision/latest?cb=20260816145242"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/e/e7/Engineer.png"
     },
 
     {
@@ -102,7 +102,7 @@ const UNITS = [
         demand: 2,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/b/b7/Large_Scientist_Camera_Man.png/revision/latest?cb=20260816145233"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/0/00/Large_Scientist_Cameraman.png"
     },
 
     {
@@ -111,7 +111,7 @@ const UNITS = [
         demand: 0,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/b/b7/Large_Scientist_Camera_Man.png/revision/latest?cb=20260816145233"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/41/Scientist_Cameraman.png"
     },
 
     {
@@ -120,7 +120,7 @@ const UNITS = [
         demand: 7,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/44/DJ_Speakerman.png/revision/latest?cb=20260927142217"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/3/30/DJ_Speakerman.png"
     },
 
     {
@@ -129,7 +129,7 @@ const UNITS = [
         demand: 8,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/fd/Upgraded_Titan_Camera_Man.png/revision/latest?cb=20260927142217"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/f8/Upgraded_Titan_Camera_Man.png"
     },
 
     {
@@ -156,7 +156,7 @@ const UNITS = [
         demand: 5,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/b/b7/Large_Scientist_Camera_Man.png/revision/latest?cb=20260816145233"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/0/00/Large_Scientist_Cameraman.png"
     },
 
     {
@@ -165,7 +165,7 @@ const UNITS = [
         demand: 3,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/b/b7/Large_Scientist_Camera_Man.png/revision/latest?cb=20260816145233"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/0/00/Large_Scientist_Cameraman.png"
     },
 
     {
@@ -197,7 +197,7 @@ const UNITS = [
         demand: 0,
         status: "Obsolete",
         category: "Events",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/d/dd/Party_Camera_Man.png/revision/latest?cb=20260816145242"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/1/19/Party_Cameraman.png"
     },
 
     {
@@ -242,7 +242,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Events",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/fd/Upgraded_Titan_Camera_Man.png/revision/latest?cb=20260927142217"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/5/5d/Camera_Prototype.png"
     },
 
     {
@@ -251,7 +251,7 @@ const UNITS = [
         demand: 8,
         status: "Dropping",
         category: "Events",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/b/b7/Large_Scientist_Camera_Man.png/revision/latest?cb=20260816145233"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/1/17/Large_Camera_Prototype.png"
     },
 
     {
