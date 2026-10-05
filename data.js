@@ -10,7 +10,7 @@ const UNITS = [
         demand: 2,
         status: "Obsolete",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1550627256529854545/IMG-5566.png?ex=6ac4c66b&is=6ac374eb&hm=061b56cfe06ada9626ea98e4c276cf184f4d1fd647a4b3438345f51177510a56&=&format=webp&quality=lossless&width=640&height=640"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9d/Upgraded_Titan_Speaker_Man.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -38,7 +38,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Mythics",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=8b630be0f22874ac7d5c58eb33e548ff92f5679a2a646a13f9e2acb53a8a6f0d&"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/7/7b/10M_Titan_Speakerman.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -47,7 +47,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959263480909936/IMG_4340.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=61820ec28ee3dc5acd1e149ed6ed24c7b15fa7c68772269007200117a521a58f&=&format=webp&quality=lossless&width=693&height=693"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/8/8e/Glitch_Cameraman.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -56,7 +56,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=fe9b81e0acb4152f8960ce90ad8b37375d263eb9feef64b3cf3857f6ce51b18f&=&format=webp&quality=lossless&width=693&height=693"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/2/2b/Camera_Woman_2.0.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -65,7 +65,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959262642045079/IMG_4339.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=d3f931889906aef7490c5170c515498012ddb267ef25183c451063632f92c3bb&=&format=webp&quality=lossless&width=693&height=693"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/6/6b/Speaker_Woman_2.0.png/revision/latest?cb=20260927142217"
     },
 
 
@@ -79,7 +79,7 @@ const UNITS = [
         demand: 10,
         status: "N/A",
         category: "Omega",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?backend=b2&ex=6ac50e7c&is=6ac3bcfc&hm=987b432777e8bc72746a9458a99a5e5b65427645d2f601ed0884dad228669c5d&"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9d/Upgraded_Titan_TV_Man.png/revision/latest?cb=20260927142217"
     },
 
 
@@ -120,7 +120,7 @@ const UNITS = [
         demand: 7,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959262642045079/IMG_4339.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=ebc89daba3d70e0080aa2067ed0737959574c96ddf16dcfd9d8141b0c01fd7d5"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/44/DJ_Speakerman.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -138,7 +138,7 @@ const UNITS = [
         demand: 8,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=ec760f19b40444ab5b40291dfd1ff409c09651f824c3b76cc93c13f28fef65b9&=&format=webp&quality=lossless&width=693&height=693"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9f/TV_Woman.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -147,7 +147,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959263480909936/IMG_4340.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=d3163dde0a6f1d5b80c3803fc4ca7cf5ec653c445306f726772134c6def06302&"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/f5/Camera_Helicopter.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -224,7 +224,7 @@ const UNITS = [
         demand: 10,
         status: "Fast Rising",
         category: "Events",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1550876099766919319/cachedMedia.png?ex=6ac3b3ec&is=6ac2626c&hm=73b3f841eaaeb257a6bb6da3bbf66252b28838d2ce6d58e52cec5b2591ddd4f8&=&format=webp&quality=lossless&width=693&height=693"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/49/Builder.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -233,7 +233,7 @@ const UNITS = [
         demand: 7,
         status: "Dropping",
         category: "Events",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555959262642045079/IMG_4339.PNG?backend=b2&ex=6ac3bcfc&is=6ac26b7c&hm=ebc89daba3d70e0080aa2067ed0737959574c96ddf16dcfd9d8141b0c01fd7d5"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/8/8d/10M_Speakerman.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -260,7 +260,7 @@ const UNITS = [
         demand: 1,
         status: "Obsolete",
         category: "Events",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555269915961729155/Fisher.png?backend=b2&ex=6ac3ddfb&is=6ac28c7b&hm=5ce86be7fadc712dc5a2292bb50a199f68cf304d4e06d2ab7f9ac3140972c44b&"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/4a/Fisher_Cameraman.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -269,7 +269,7 @@ const UNITS = [
         demand: 4,
         status: "Dropping",
         category: "Events",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555269914439323798/pirate.png?backend=b2&ex=6ac3ddfb&is=6ac28c7b&hm=4ed5a49afe69da33a527b3236fe5c8403ea5f59d2133b22aa60a6780c927b03f&"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/0/0d/Pirate_Large_TV_Man.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -278,7 +278,7 @@ const UNITS = [
         demand: 7,
         status: "Dropping",
         category: "Events",
-        icon: "https://cdn.discordapp.com/attachments/1549863063455531111/1555269915227983892/p.png?backend=b2&ex=6ac3ddfb&is=6ac28c7b&hm=c2f81eab2644b8f8f3fdd9f39568c453680a974576693c9c37e373634b1fecc5&"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/98/Poseidon_Cameraman.png/revision/latest?cb=20260927142217"
     }
 
 ];
