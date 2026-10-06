@@ -38,7 +38,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?ex=6ac50e7c&is=6ac3bcfc&hm=fe9b81e0acb4152f8960ce90ad8b37375d263eb9feef64b3cf3857f6ce51b18f&format=webp&quality=lossless&width=693&height=693"
+        icon: "images/10M_Titan_Speakerman.png"
     },
 
     {
@@ -47,7 +47,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959263480909936/IMG_4340.PNG?ex=6ac50e7c&is=6ac3bcfc&hm=61820ec28ee3dc5acd1e149ed6ed24c7b15fa7c68772269007200117a521a58f&format=webp&quality=lossless&width=693&height=693"
+        icon: "images/Glitch_Cameraman.png"
     },
 
     {
@@ -56,7 +56,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?ex=6ac50e7c&is=6ac3bcfc&hm=fe9b81e0acb4152f8960ce90ad8b37375d263eb9feef64b3cf3857f6ce51b18f&format=webp&quality=lossless&width=693&height=693"
+        icon: "images/Camera_Woman_2.0.png"
     },
 
     {
@@ -65,7 +65,7 @@ const UNITS = [
         demand: 1,
         status: "N/A",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959262642045079/IMG_4339.PNG?ex=6ac50e7c&is=6ac3bcfc&hm=d3f931889906aef7490c5170c515498012ddb267ef25183c451063632f92c3bb&format=webp&quality=lossless&width=693&height=693"
+        icon: "images/Speaker_Woman_2.0.png"
     },
 
 
@@ -79,7 +79,7 @@ const UNITS = [
         demand: 10,
         status: "N/A",
         category: "Omega",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?ex=6ac50e7c&is=6ac3bcfc&hm=987b432777e8bc72746a9458a99a5e5b65427645d2f601ed0884dad228669c5d&format=webp&quality=lossless&width=693&height=693"
+        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959264525164544/IMG_4341.PNG?ex=6ac50e7c&is=6ac3bcfc&hm=987b432777e8bc72746a9458a99a5e5b65427645d2f601ed0884dad228669c5d[...]
     },
 
 
