@@ -5,42 +5,87 @@ const FALLBACK_ICON = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
     </svg>
 `)}`;
 
+const yourOffer = [];
+const theirOffer = [];
+
+const unitGrid = document.getElementById("unitGrid");
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+
+const yourOfferElement = document.getElementById("yourOffer");
+const theirOfferElement = document.getElementById("theirOffer");
+
+const yourTotalElement = document.getElementById("yourTotal");
+const theirTotalElement = document.getElementById("theirTotal");
+
+const resultBadge = document.getElementById("resultBadge");
+const differenceElement = document.getElementById("difference");
+const resultText = document.getElementById("resultText");
+
+const clearYour = document.getElementById("clearYour");
+const clearTheir = document.getElementById("clearTheir");
+
+/* =========================
+   HELPERS
+========================= */
+
+function formatValue(value) {
+    const safeValue = Number(value) || 0;
+
+    if (safeValue >= 1000000) {
+        return (safeValue / 1000000).toFixed(1) + "M";
+    }
+
+    if (safeValue >= 1000) {
+        return (safeValue / 1000).toFixed(safeValue >= 10000 ? 0 : 1) + "K";
+    }
+
+    return safeValue.toLocaleString();
+}
+
+function getUnitCategory(unit) {
+    if (unit && unit.category) {
+        return unit.category;
+    }
+
+    return "Regular";
+}
+
 function setUnitIcon(img, src) {
     if (!img) return;
 
+    const nextSrc = src && String(src).trim() ? src : FALLBACK_ICON;
+
     img.onerror = null;
-    img.src = src || FALLBACK_ICON;
+    img.src = nextSrc;
 
     img.onerror = () => {
-        img.onerror = null;
-        img.src = FALLBACK_ICON;
+        if (img.src !== FALLBACK_ICON) {
+            img.onerror = null;
+            img.src = FALLBACK_ICON;
+        }
     };
 }
 
-function renderUnits() {
+/* =========================
+   UNIT GRID
+========================= */
 
+function renderUnits() {
     const search = searchInput.value.toLowerCase();
     const category = categoryFilter.value;
 
     unitGrid.innerHTML = "";
 
     const filtered = UNITS.filter(unit => {
-
-        const matchesSearch =
-            unit.name.toLowerCase().includes(search);
-
-        const matchesCategory =
-            category === "All" ||
-            getUnitCategory(unit) === category;
+        const matchesSearch = unit.name.toLowerCase().includes(search);
+        const matchesCategory = category === "All" || getUnitCategory(unit) === category;
 
         return matchesSearch && matchesCategory;
     });
 
-
     filtered.forEach(unit => {
-
         const card = document.createElement("div");
-
         card.className = "unit-card";
 
         card.innerHTML = `
@@ -59,7 +104,6 @@ function renderUnits() {
             </div>
 
             <div class="unit-info">
-
                 <span class="demand">
                     Demand ${unit.demand}/10
                 </span>
@@ -67,53 +111,35 @@ function renderUnits() {
                 <span class="status">
                     ${unit.status}
                 </span>
-
             </div>
         `;
 
         const icon = card.querySelector(".unit-icon");
         setUnitIcon(icon, unit.icon);
 
-
-        /* DESKTOP + MOBILE UNIT SELECTION */
-
         card.addEventListener("click", () => {
-
-            // On mobile, show the offer chooser
             if (window.innerWidth <= 600) {
                 showMobileChoice(unit);
                 return;
             }
 
-            // Desktop: left click = Your Offer
             yourOffer.push(unit);
             updateCalculator();
-
         });
 
-
-        /* DESKTOP: RIGHT CLICK = THEIR OFFER */
-
         card.addEventListener("contextmenu", event => {
-
             event.preventDefault();
 
-            // Desktop only
             if (window.innerWidth > 600) {
                 theirOffer.push(unit);
                 updateCalculator();
             }
-
         });
 
-
         unitGrid.appendChild(card);
-
     });
 
-
     if (filtered.length === 0) {
-
         unitGrid.innerHTML = `
             <p style="
                 grid-column:1/-1;
@@ -125,15 +151,16 @@ function renderUnits() {
             </p>
         `;
     }
-
 }
 
-function renderOffer(array, element) {
+/* =========================
+   OFFER RENDERING
+========================= */
 
+function renderOffer(array, element) {
     element.innerHTML = "";
 
     if (array.length === 0) {
-
         element.innerHTML = `
             <div class="empty-offer">
                 <span>+</span>
@@ -144,11 +171,8 @@ function renderOffer(array, element) {
         return;
     }
 
-
     array.forEach((unit, index) => {
-
         const item = document.createElement("div");
-
         item.className = "offer-item";
 
         item.innerHTML = `
@@ -162,15 +186,130 @@ function renderOffer(array, element) {
         item.title = "Click to remove";
 
         item.addEventListener("click", () => {
-
             array.splice(index, 1);
-
             updateCalculator();
-
         });
 
         element.appendChild(item);
-
     });
-
 }
+
+/* =========================
+   CALCULATOR
+========================= */
+
+function updateCalculator() {
+    renderOffer(yourOffer, yourOfferElement);
+    renderOffer(theirOffer, theirOfferElement);
+
+    const yourTotal = yourOffer.reduce((sum, unit) => sum + unit.value, 0);
+    const theirTotal = theirOffer.reduce((sum, unit) => sum + unit.value, 0);
+
+    yourTotalElement.textContent = formatValue(yourTotal);
+    theirTotalElement.textContent = formatValue(theirTotal);
+
+    calculateResult(yourTotal, theirTotal);
+}
+
+/* =========================
+   WIN / FAIR / LOSS
+========================= */
+
+function calculateResult(yourTotal, theirTotal) {
+    resultBadge.className = "result-badge fair";
+
+    if (yourTotal === 0 && theirTotal === 0) {
+        resultBadge.textContent = "FAIR";
+        differenceElement.textContent = "0%";
+        resultText.textContent = "Add units to compare";
+        return;
+    }
+
+    if (theirTotal === 0) {
+        resultBadge.textContent = "—";
+        differenceElement.textContent = "—";
+        resultText.textContent = "Add something to their offer";
+        return;
+    }
+
+    const difference = ((yourTotal - theirTotal) / theirTotal) * 100;
+    const rounded = Math.abs(difference).toFixed(1);
+
+    differenceElement.textContent = `${rounded}%`;
+
+    if (Math.abs(difference) <= 10) {
+        resultBadge.className = "result-badge fair";
+        resultBadge.textContent = "FAIR";
+        resultText.textContent = "The values are close";
+    } else if (difference > 10) {
+        resultBadge.className = "result-badge loss";
+        resultBadge.textContent = "LOSS";
+        resultText.textContent = "Your offer has higher value";
+    } else {
+        resultBadge.className = "result-badge win";
+        resultBadge.textContent = "WIN";
+        resultText.textContent = "Their offer has higher value";
+    }
+}
+
+/* =========================
+   CLEAR BUTTONS
+========================= */
+
+clearYour.addEventListener("click", () => {
+    yourOffer.length = 0;
+    updateCalculator();
+});
+
+clearTheir.addEventListener("click", () => {
+    theirOffer.length = 0;
+    updateCalculator();
+});
+
+/* =========================
+   SEARCH
+========================= */
+
+searchInput.addEventListener("input", renderUnits);
+categoryFilter.addEventListener("change", renderUnits);
+
+/* =========================
+   HERO STATS
+========================= */
+
+function updateStats() {
+    const count = document.getElementById("unitCount");
+    const highest = document.getElementById("highestValue");
+
+    count.textContent = UNITS.length;
+
+    const highestUnit = [...UNITS].sort((a, b) => b.value - a.value)[0];
+
+    if (highestUnit) {
+        highest.textContent = formatValue(highestUnit.value);
+    }
+}
+
+/* =========================
+   MOBILE CHOICE (if used elsewhere)
+========================= */
+
+function showMobileChoice(unit) {
+    const choice = window.confirm(`Add "${unit.name}" to your offer?`);
+
+    if (choice) {
+        yourOffer.push(unit);
+    } else {
+        theirOffer.push(unit);
+    }
+
+    updateCalculator();
+}
+
+/* =========================
+   START
+========================= */
+
+renderUnits();
+updateCalculator();
+updateStats();
