@@ -1,55 +1,21 @@
-const yourOffer = [];
-const theirOffer = [];
+const FALLBACK_ICON = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+        <rect width="128" height="128" rx="18" fill="#1f2937"/>
+        <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#f8fafc" font-size="32" font-family="Arial, sans-serif" font-weight="700">ATD</text>
+    </svg>
+`)}`;
 
-const unitGrid = document.getElementById("unitGrid");
-const searchInput = document.getElementById("searchInput");
-const categoryFilter = document.getElementById("categoryFilter");
+function setUnitIcon(img, src) {
+    if (!img) return;
 
-const yourOfferElement = document.getElementById("yourOffer");
-const theirOfferElement = document.getElementById("theirOffer");
+    img.onerror = null;
+    img.src = src || FALLBACK_ICON;
 
-const yourTotalElement = document.getElementById("yourTotal");
-const theirTotalElement = document.getElementById("theirTotal");
-
-const resultBadge = document.getElementById("resultBadge");
-const differenceElement = document.getElementById("difference");
-const resultText = document.getElementById("resultText");
-
-const clearYour = document.getElementById("clearYour");
-const clearTheir = document.getElementById("clearTheir");
-
-
-/* =========================
-   HELPERS
-========================= */
-
-function formatValue(value) {
-
-    if (value >= 1000000) {
-        return (value / 1000000).toFixed(1) + "M";
-    }
-
-    if (value >= 1000) {
-        return (value / 1000).toFixed(value >= 10000 ? 0 : 1) + "K";
-    }
-
-    return value.toLocaleString();
+    img.onerror = () => {
+        img.onerror = null;
+        img.src = FALLBACK_ICON;
+    };
 }
-
-
-function getUnitCategory(unit) {
-
-    if (unit.category) {
-        return unit.category;
-    }
-
-    return "Regular";
-}
-
-
-/* =========================
-   UNIT GRID
-========================= */
 
 function renderUnits() {
 
@@ -80,7 +46,7 @@ function renderUnits() {
         card.innerHTML = `
             <img
                 class="unit-icon"
-                src="${unit.icon}"
+                src="${unit.icon || FALLBACK_ICON}"
                 alt="${unit.name}"
             >
 
@@ -105,37 +71,40 @@ function renderUnits() {
             </div>
         `;
 
+        const icon = card.querySelector(".unit-icon");
+        setUnitIcon(icon, unit.icon);
+
 
         /* DESKTOP + MOBILE UNIT SELECTION */
 
-card.addEventListener("click", () => {
+        card.addEventListener("click", () => {
 
-    // On mobile, show the offer chooser
-    if (window.innerWidth <= 600) {
-        showMobileChoice(unit);
-        return;
-    }
+            // On mobile, show the offer chooser
+            if (window.innerWidth <= 600) {
+                showMobileChoice(unit);
+                return;
+            }
 
-    // Desktop: left click = Your Offer
-    yourOffer.push(unit);
-    updateCalculator();
+            // Desktop: left click = Your Offer
+            yourOffer.push(unit);
+            updateCalculator();
 
-});
+        });
 
 
-/* DESKTOP: RIGHT CLICK = THEIR OFFER */
+        /* DESKTOP: RIGHT CLICK = THEIR OFFER */
 
-card.addEventListener("contextmenu", event => {
+        card.addEventListener("contextmenu", event => {
 
-    event.preventDefault();
+            event.preventDefault();
 
-    // Desktop only
-    if (window.innerWidth > 600) {
-        theirOffer.push(unit);
-        updateCalculator();
-    }
+            // Desktop only
+            if (window.innerWidth > 600) {
+                theirOffer.push(unit);
+                updateCalculator();
+            }
 
-});
+        });
 
 
         unitGrid.appendChild(card);
@@ -158,11 +127,6 @@ card.addEventListener("contextmenu", event => {
     }
 
 }
-
-
-/* =========================
-   OFFER RENDERING
-========================= */
 
 function renderOffer(array, element) {
 
@@ -188,13 +152,14 @@ function renderOffer(array, element) {
         item.className = "offer-item";
 
         item.innerHTML = `
-            <img src="${unit.icon}" alt="${unit.name}">
+            <img src="${unit.icon || FALLBACK_ICON}" alt="${unit.name}">
             <span>${unit.name}</span>
         `;
 
+        const icon = item.querySelector("img");
+        setUnitIcon(icon, unit.icon);
 
         item.title = "Click to remove";
-
 
         item.addEventListener("click", () => {
 
@@ -204,177 +169,8 @@ function renderOffer(array, element) {
 
         });
 
-
         element.appendChild(item);
 
     });
 
 }
-
-
-/* =========================
-   CALCULATOR
-========================= */
-
-function updateCalculator() {
-
-    renderOffer(yourOffer, yourOfferElement);
-    renderOffer(theirOffer, theirOfferElement);
-
-
-    const yourTotal =
-        yourOffer.reduce((sum, unit) => sum + unit.value, 0);
-
-    const theirTotal =
-        theirOffer.reduce((sum, unit) => sum + unit.value, 0);
-
-
-    yourTotalElement.textContent =
-        formatValue(yourTotal);
-
-    theirTotalElement.textContent =
-        formatValue(theirTotal);
-
-
-    calculateResult(yourTotal, theirTotal);
-
-}
-
-
-/* =========================
-   WIN / FAIR / LOSS
-========================= */
-
-function calculateResult(yourTotal, theirTotal) {
-
-    resultBadge.className = "result-badge fair";
-
-    if (yourTotal === 0 && theirTotal === 0) {
-
-        resultBadge.textContent = "FAIR";
-        differenceElement.textContent = "0%";
-        resultText.textContent = "Add units to compare";
-
-        return;
-    }
-
-
-    if (theirTotal === 0) {
-
-        resultBadge.textContent = "—";
-        differenceElement.textContent = "—";
-        resultText.textContent = "Add something to their offer";
-
-        return;
-    }
-
-
-    const difference =
-        ((yourTotal - theirTotal) / theirTotal) * 100;
-
-
-    const rounded =
-        Math.abs(difference).toFixed(1);
-
-
-    differenceElement.textContent =
-        `${rounded}%`;
-
-
-   if (Math.abs(difference) <= 10) {
-
-    resultBadge.className = "result-badge fair";
-    resultBadge.textContent = "FAIR";
-    resultText.textContent = "The values are close";
-
-}
-
-else if (difference > 10) {
-
-    // YOUR offer is worth more = LOSS
-    resultBadge.className = "result-badge loss";
-    resultBadge.textContent = "LOSS";
-    resultText.textContent = "Your offer has higher value";
-
-}
-
-else {
-
-    // THEIR offer is worth more = WIN
-    resultBadge.className = "result-badge win";
-    resultBadge.textContent = "WIN";
-    resultText.textContent = "Their offer has higher value";
-
-}
-
-}
-
-
-/* =========================
-   CLEAR BUTTONS
-========================= */
-
-clearYour.addEventListener("click", () => {
-
-    yourOffer.length = 0;
-
-    updateCalculator();
-
-});
-
-
-clearTheir.addEventListener("click", () => {
-
-    theirOffer.length = 0;
-
-    updateCalculator();
-
-});
-
-
-/* =========================
-   SEARCH
-========================= */
-
-searchInput.addEventListener("input", renderUnits);
-
-categoryFilter.addEventListener("change", renderUnits);
-
-
-/* =========================
-   HERO STATS
-========================= */
-
-function updateStats() {
-
-    const count =
-        document.getElementById("unitCount");
-
-    const highest =
-        document.getElementById("highestValue");
-
-
-    count.textContent = UNITS.length;
-
-
-    const highestUnit =
-        [...UNITS].sort((a, b) => b.value - a.value)[0];
-
-
-    if (highestUnit) {
-
-        highest.textContent =
-            formatValue(highestUnit.value);
-
-    }
-
-}
-
-
-/* =========================
-   START
-========================= */
-
-renderUnits();
-updateCalculator();
-updateStats();

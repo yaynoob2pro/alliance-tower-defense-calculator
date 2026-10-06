@@ -1,3 +1,12 @@
+const makeFallbackIcon = (label, bg = "#1f2937", fg = "#f8fafc") => {
+    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+            <rect width="128" height="128" rx="18" fill="${bg}"/>
+            <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="${fg}" font-size="40" font-family="Arial, sans-serif" font-weight="700">${label}</text>
+        </svg>
+    `)}`;
+};
+
 const UNITS = [
 
     // =========================
@@ -79,7 +88,7 @@ const UNITS = [
         demand: 10,
         status: "N/A",
         category: "Omega",
-        icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%230b0d12'/%3E%3Ccircle cx='256' cy='256' r='150' fill='%236d7cff'/%3E%3Ctext x='256' y='268' text-anchor='middle' font-family='Arial, sans-serif' font-size='34' fill='white'%3ETV MAN%3C/text%3E%3C/svg%3E"
+        icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%230b0d12'/%3E%3Ccircle cx='256' cy='256' r='180' fill='%2347d4ff'/%3E%3Ccircle cx='256' cy='256' r='120' fill='%230b0d12'/%3E%3C/svg%3E"
     },
 
 
@@ -111,7 +120,7 @@ const UNITS = [
         demand: 0,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/e/ea/Scientist_Camera_Man.png/revision/latest?cb=20260816145242"
+        icon: makeFallbackIcon("SC")
     },
 
     {
@@ -120,7 +129,7 @@ const UNITS = [
         demand: 7,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9e/DJ_Speaker_Man.png/revision/latest?cb=20260831062958"
+        icon: makeFallbackIcon("DJ")
     },
 
     {
@@ -129,7 +138,7 @@ const UNITS = [
         demand: 8,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/a/a5/Titan_Camera_Man.png/revision/latest?cb=20260804072402"
+        icon: makeFallbackIcon("TC")
     },
 
     {
@@ -138,7 +147,7 @@ const UNITS = [
         demand: 8,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/48/TV_Woman.webp/revision/latest?cb=20260821064000"
+        icon: makeFallbackIcon("TV")
     },
 
     {
@@ -147,7 +156,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/99/Camera_Helicopter.png/revision/latest?cb=20260927141957"
+        icon: makeFallbackIcon("CH")
     },
 
     {
@@ -156,7 +165,7 @@ const UNITS = [
         demand: 5,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/0/00/Large_Scientist_Cameraman.png"
+        icon: makeFallbackIcon("PS")
     },
 
     {
@@ -165,7 +174,7 @@ const UNITS = [
         demand: 3,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/0/00/Large_Scientist_Cameraman.png"
+        icon: makeFallbackIcon("FS")
     },
 
     {
@@ -183,7 +192,7 @@ const UNITS = [
         demand: 5,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/fd/Present_Camera_Man.png/revision/latest?cb=20260927142217"
+        icon: makeFallbackIcon("PC")
     },
 
 
@@ -233,7 +242,7 @@ const UNITS = [
         demand: 7,
         status: "Dropping",
         category: "Events",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/8/8d/10M_Speakerman.png/revision/latest?cb=20260927142217"
+        icon: makeFallbackIcon("10M")
     },
 
     {
@@ -242,7 +251,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Events",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/5/5d/Camera_Prototype.png"
+        icon: makeFallbackIcon("CP")
     },
 
     {
@@ -251,7 +260,7 @@ const UNITS = [
         demand: 8,
         status: "Dropping",
         category: "Events",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/1/17/Large_Camera_Prototype.png"
+        icon: makeFallbackIcon("LCP")
     },
 
     {
@@ -282,3 +291,4 @@ const UNITS = [
     }
 
 ];
+
