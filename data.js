@@ -10,7 +10,7 @@ const UNITS = [
         demand: 2,
         status: "Obsolete",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9d/Upgraded_Titan_Speaker_Man.png"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/3/37/Titan_Speaker_Man_2%270.webp/revision/latest?cb=20260821064002"
     },
 
     {
@@ -29,7 +29,7 @@ const UNITS = [
         demand: 5,
         status: "Dropping",
         category: "Mythics",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/f8/Upgraded_Titan_Camera_Man.png"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/fd/Upgraded_Titan_Camera_Man.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -38,7 +38,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Mythics",
-        icon: "https://media.discordapp.net/attachments/1549863063455531111/1555959260842819599/IMG_4338.PNG?ex=6ac50e7c&is=6ac3bcfc&hm=fe9b81e0acb4152f8960ce90ad8b37375d263eb9feef64b3cf3857f6ce51b18f[...]"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/42/10M_Titan_Speaker_Man.png/revision/latest?cb=20260927142217"
     },
 
     {
@@ -93,7 +93,7 @@ const UNITS = [
         demand: 8,
         status: "Unstable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/e/e7/Engineer.png"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/1/17/Engineer_Camera_Man.png/revision/latest?cb=20260816145242"
     },
 
     {
@@ -102,7 +102,7 @@ const UNITS = [
         demand: 2,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/0/00/Large_Scientist_Cameraman.png"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/b/b7/Large_Scientist_Camera_Man.png/revision/latest?cb=20260816145233"
     },
 
     {
@@ -111,7 +111,7 @@ const UNITS = [
         demand: 0,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/41/Scientist_Cameraman.png"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/e/ea/Scientist_Camera_Man.png/revision/latest?cb=20260816145242"
     },
 
     {
@@ -120,7 +120,7 @@ const UNITS = [
         demand: 7,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/3/30/DJ_Speakerman.png"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9e/DJ_Speaker_Man.png/revision/latest?cb=20260831062958"
     },
 
     {
@@ -129,7 +129,7 @@ const UNITS = [
         demand: 8,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/f8/Upgraded_Titan_Camera_Man.png"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/a/a5/Titan_Camera_Man.png/revision/latest?cb=20260804072402"
     },
 
     {
@@ -138,7 +138,7 @@ const UNITS = [
         demand: 8,
         status: "Stable",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/9f/TV_Woman.png/revision/latest?cb=20260927142217"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/4/48/TV_Woman.webp/revision/latest?cb=20260821064000"
     },
 
     {
@@ -147,7 +147,7 @@ const UNITS = [
         demand: 6,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/f5/Camera_Helicopter.png/revision/latest?cb=20260927142217"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/9/99/Camera_Helicopter.png/revision/latest?cb=20260927141957"
     },
 
     {
@@ -183,7 +183,7 @@ const UNITS = [
         demand: 5,
         status: "Dropping",
         category: "Exclusive",
-        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/d/dd/Party_Camera_Man.png/revision/latest?cb=20260816145242"
+        icon: "https://static.wikia.nocookie.net/alliance-tower-defense/images/f/fd/Present_Camera_Man.png/revision/latest?cb=20260927142217"
     },
 
 
